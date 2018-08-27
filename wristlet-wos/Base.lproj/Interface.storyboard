@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mXO-Es-lcL">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="-199" y="929"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="wristlet_wos" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="929"/>
+        </scene>
+        <!--Home Interface Controller-->
+        <scene sceneID="9GQ-z8-IgT">
+            <objects>
+                <controller id="mXO-Es-lcL" customClass="HomeInterfaceController" customModule="wristlet_wos_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="ALq-Gj-XMB">
+                            <items>
+                                <button width="1" height="0.33300000000000002" alignment="center" title="Sets" id="b40-Tw-dkH">
+                                    <connections>
+                                        <segue destination="HLg-NQ-Lwn" kind="push" id="w8Q-8J-iVR"/>
+                                    </connections>
+                                </button>
+                                <button width="1" height="0.33329999999999999" alignment="left" title="Classes" id="sEQ-ar-UeG">
+                                    <connections>
+                                        <segue destination="71h-ng-bbr" kind="push" id="Fzw-8R-MwQ"/>
+                                    </connections>
+                                </button>
+                                <button width="1" height="0.33329999999999999" alignment="left" title="Folders" id="2u7-6A-Z0V"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-99" y="67"/>
+        </scene>
+        <!--Set List Interface Controller-->
+        <scene sceneID="SZE-be-9DY">
+            <objects>
+                <controller id="HLg-NQ-Lwn" customClass="SetListInterfaceController" customModule="wristlet_wos_Extension">
+                    <items>
+                        <table alignment="left" id="eQw-w2-LMa">
+                            <items>
+                                <tableRow identifier="refreshRow" id="vxZ-Xv-37s" customClass="RefreshRowController" customModule="wristlet_wos_Extension">
+                                    <group key="rootItem" width="1" height="24" alignment="left" id="gMx-gB-ksA">
+                                        <items>
+                                            <button width="0.20000000000000001" height="1" alignment="center" backgroundImage="refresh-arrow" id="OtU-qd-Lrz">
+                                                <connections>
+                                                    <action selector="refreshButtonTapped" destination="vxZ-Xv-37s" id="hAd-cj-0Za"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="refreshButton" destination="OtU-qd-Lrz" id="4rj-J6-wJY"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="setRow" id="aqg-Zd-WQQ" customClass="SetListRowController" customModule="wristlet_wos_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="084-Gk-f69">
+                                        <items>
+                                            <label alignment="left" text="(Set title)" numberOfLines="0" id="64O-16-pjt"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="dsX-i7-0Z2" kind="push" identifier="toTermListSegue" id="I2M-0C-kky"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="64O-16-pjt" id="XPU-ww-Mi0"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="eQw-w2-LMa" id="Eu0-Gr-fnL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="291" y="-133"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="n1x-AM-O1a">
+            <objects>
+                <controller id="71h-ng-bbr">
+                    <items>
+                        <table alignment="left" id="oV8-1C-hdf">
+                            <items>
+                                <tableRow id="90i-Va-tf4">
+                                    <group key="rootItem" width="1" alignment="left" id="zd1-WY-03q">
+                                        <items>
+                                            <label alignment="left" text="(Class name)" numberOfLines="0" id="rfO-pz-tvX"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="HLg-NQ-Lwn" kind="push" id="pQ0-JR-04s"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="259" y="315"/>
+        </scene>
+        <!--termListIC-->
+        <scene sceneID="te4-Ng-Emi">
+            <objects>
+                <controller identifier="termListIC" id="dsX-i7-0Z2" customClass="TermListInterfaceController" customModule="wristlet_wos_Extension">
+                    <items>
+                        <table alignment="left" id="uQb-23-kVJ">
+                            <items>
+                                <tableRow identifier="termRowController" id="7vK-NE-T2d" customClass="TermListRowController" customModule="wristlet_wos_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="qxU-R9-P7b">
+                                        <items>
+                                            <label width="136" alignment="left" text="(Term)" numberOfLines="0" id="UtG-ai-qyf"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="termLabel" destination="UtG-ai-qyf" id="uTj-Ou-3gN"/>
+                                        <segue destination="fOY-NL-8kl" kind="push" identifier="toTermDetailSegue" id="O3b-iq-nFW"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="uQb-23-kVJ" id="nfE-qy-cQT"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="534" y="-135"/>
+        </scene>
+        <!--Term Detail Interface Controller-->
+        <scene sceneID="Xm5-r1-wC8">
+            <objects>
+                <controller id="fOY-NL-8kl" customClass="TermDetailInterfaceController" customModule="wristlet_wos_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="sbF-Ag-t96">
+                            <items>
+                                <group width="1" alignment="left" layout="vertical" id="3yo-vM-GrU">
+                                    <items>
+                                        <label width="1" alignment="left" text="(Term)" textAlignment="left" numberOfLines="0" id="oYK-Y9-8p2"/>
+                                    </items>
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="f3b-Tk-kij">
+                                            <connections>
+                                                <action selector="tapGestureRecognizerTapped:" destination="fOY-NL-8kl" id="Wjg-iA-fUz"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </group>
+                                <group width="1" height="37" alignment="left" verticalAlignment="bottom" id="Vhe-0X-NL2">
+                                    <items>
+                                        <button width="0.20000000000000001" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="left-arrow" id="720-wb-l4x">
+                                            <connections>
+                                                <action selector="previousCardTapped" destination="fOY-NL-8kl" id="Q1R-fm-ixo"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.20000000000000001" height="1" alignment="right" verticalAlignment="bottom" backgroundImage="right-arrow" id="7A4-HG-eKT">
+                                            <connections>
+                                                <action selector="nextCardTapped" destination="fOY-NL-8kl" id="UQg-cF-8WZ"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="termDefLabel" destination="oYK-Y9-8p2" id="s4L-dg-ywk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="772" y="-125"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="w8Q-8J-iVR"/>
+    </inferredMetricsTieBreakers>
+</document>
