@@ -9,10 +9,10 @@
 import Foundation
 
 struct TopLevelClassDictionary: Decodable {
-    let classes: [Class]
+    let classes: [QuizletClass]
 }
 
-struct Class: Decodable {
+struct QuizletClass: Decodable {
     let name: String
     let id: Int
 }

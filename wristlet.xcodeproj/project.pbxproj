@@ -22,8 +22,12 @@
 		B75168C6212CA343003FAF91 /* TermDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168C5212CA343003FAF91 /* TermDetailInterfaceController.swift */; };
 		B75168C8212CA417003FAF91 /* TermListRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168C7212CA417003FAF91 /* TermListRowController.swift */; };
 		B75168D4212E1B0D003FAF91 /* RefreshRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */; };
-		B75168FD213447B0003FAF91 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168D1212CC66B003FAF91 /* Class.swift */; };
+		B75168FD213447B0003FAF91 /* QuizletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168D1212CC66B003FAF91 /* QuizletClass.swift */; };
 		B751690021346FB2003FAF91 /* ClassListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168FF21346FB2003FAF91 /* ClassListInterfaceController.swift */; };
+		B75169022135BD05003FAF91 /* CardSetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169012135BD05003FAF91 /* CardSetController.swift */; };
+		B75169042135BD1B003FAF91 /* QuizletClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169032135BD1B003FAF91 /* QuizletClassController.swift */; };
+		B75169082135DB2B003FAF91 /* QuizletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169072135DB2B003FAF91 /* QuizletManager.swift */; };
+		B751690A2135DDFF003FAF91 /* WatchConnectivtyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */; };
 		B7EB2059211CED7800A0DC3E /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB2058211CED7800A0DC3E /* SetTableViewController.swift */; };
 		B7EB205B211CEDAF00A0DC3E /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB205A211CEDAF00A0DC3E /* CardSet.swift */; };
 		B7EB209B211DF42F00A0DC3E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EB2099211DF42F00A0DC3E /* Interface.storyboard */; };
@@ -91,9 +95,13 @@
 		B75168C3212CA332003FAF91 /* TermListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermListInterfaceController.swift; sourceTree = "<group>"; };
 		B75168C5212CA343003FAF91 /* TermDetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDetailInterfaceController.swift; sourceTree = "<group>"; };
 		B75168C7212CA417003FAF91 /* TermListRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermListRowController.swift; sourceTree = "<group>"; };
-		B75168D1212CC66B003FAF91 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		B75168D1212CC66B003FAF91 /* QuizletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletClass.swift; sourceTree = "<group>"; };
 		B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRowController.swift; sourceTree = "<group>"; };
 		B75168FF21346FB2003FAF91 /* ClassListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListInterfaceController.swift; sourceTree = "<group>"; };
+		B75169012135BD05003FAF91 /* CardSetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetController.swift; sourceTree = "<group>"; };
+		B75169032135BD1B003FAF91 /* QuizletClassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletClassController.swift; sourceTree = "<group>"; };
+		B75169072135DB2B003FAF91 /* QuizletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletManager.swift; sourceTree = "<group>"; };
+		B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivtyManager.swift; sourceTree = "<group>"; };
 		B7EB2058211CED7800A0DC3E /* SetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
 		B7EB205A211CEDAF00A0DC3E /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		B7EB2097211DF42F00A0DC3E /* wristlet-wos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wristlet-wos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,14 +178,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		B75168C9212CBCEB003FAF91 /* Interface Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B7EB20C0211DFDC700A0DC3E /* HomeInterfaceController.swift */,
-			);
-			path = "Interface Controllers";
-			sourceTree = "<group>";
-		};
 		B75168CA212CBCFA003FAF91 /* Terms */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,10 +242,35 @@
 		B75168FE213447B3003FAF91 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B75168D1212CC66B003FAF91 /* Class.swift */,
+				B75168D1212CC66B003FAF91 /* QuizletClass.swift */,
 				B75168FF21346FB2003FAF91 /* ClassListInterfaceController.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		B75169052135BD42003FAF91 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B75168BE212C720C003FAF91 /* NetworkController.swift */,
+				B75169032135BD1B003FAF91 /* QuizletClassController.swift */,
+				B75169012135BD05003FAF91 /* CardSetController.swift */,
+				B75169072135DB2B003FAF91 /* QuizletManager.swift */,
+				B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */,
+				B7EB20AC211DF43100A0DC3E /* NotificationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B75169062135BD4F003FAF91 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB20C0211DFDC700A0DC3E /* HomeInterfaceController.swift */,
+				B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */,
+				B75168CB212CBD0E003FAF91 /* Sets */,
+				B75168FE213447B3003FAF91 /* Classes */,
+				B75168CA212CBCFA003FAF91 /* Terms */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		B7EB2098211DF42F00A0DC3E /* wristlet-wos */ = {
@@ -261,14 +286,9 @@
 		B7EB20A7211DF43100A0DC3E /* wristlet-wos Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */,
-				B75168C9212CBCEB003FAF91 /* Interface Controllers */,
-				B75168FE213447B3003FAF91 /* Classes */,
-				B75168CB212CBD0E003FAF91 /* Sets */,
-				B75168CA212CBCFA003FAF91 /* Terms */,
-				B75168BE212C720C003FAF91 /* NetworkController.swift */,
+				B75169052135BD42003FAF91 /* Controllers */,
+				B75169062135BD4F003FAF91 /* UI */,
 				B7EB20AA211DF43100A0DC3E /* ExtensionDelegate.swift */,
-				B7EB20AC211DF43100A0DC3E /* NotificationController.swift */,
 				B7EB20AE211DF43200A0DC3E /* Assets.xcassets */,
 				B7EB20B0211DF43200A0DC3E /* Info.plist */,
 				B7EB20B1211DF43200A0DC3E /* PushNotificationPayload.apns */,
@@ -424,19 +444,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B75168FD213447B0003FAF91 /* Class.swift in Sources */,
+				B75168FD213447B0003FAF91 /* QuizletClass.swift in Sources */,
 				B7169E81212485E8007E8DC9 /* HomeInterfaceController.swift in Sources */,
 				B75168C2212C7FF9003FAF91 /* SetListRowController.swift in Sources */,
 				B751690021346FB2003FAF91 /* ClassListInterfaceController.swift in Sources */,
+				B75169022135BD05003FAF91 /* CardSetController.swift in Sources */,
 				B7169E80212485E8007E8DC9 /* SetListInterfaceController.swift in Sources */,
 				B7169EC521266D71007E8DC9 /* CardSet.swift in Sources */,
 				B75168C6212CA343003FAF91 /* TermDetailInterfaceController.swift in Sources */,
 				B7EB20AD211DF43100A0DC3E /* NotificationController.swift in Sources */,
 				B75168C4212CA332003FAF91 /* TermListInterfaceController.swift in Sources */,
+				B751690A2135DDFF003FAF91 /* WatchConnectivtyManager.swift in Sources */,
 				B75168D4212E1B0D003FAF91 /* RefreshRowController.swift in Sources */,
 				B7EB20AB211DF43100A0DC3E /* ExtensionDelegate.swift in Sources */,
+				B75169082135DB2B003FAF91 /* QuizletManager.swift in Sources */,
 				B75168C8212CA417003FAF91 /* TermListRowController.swift in Sources */,
 				B75168BF212C720C003FAF91 /* NetworkController.swift in Sources */,
+				B75169042135BD1B003FAF91 /* QuizletClassController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

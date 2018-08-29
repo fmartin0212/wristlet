@@ -10,30 +10,23 @@ import Foundation
 
 class NetworkController {
     
-    static func fetchAllSets(userID: String, accessToken: String, completion: @escaping ([CardSet]?) -> Void) {
+    static func fetch(with urlRequest: URLRequest, completion: @escaping (Data?) -> Void) {
         
-        let baseURL = URL(string: "https://api.quizlet.com/2.0/users/\(userID)")
-        guard var url = baseURL else { completion(nil) ; return }
-        
-        url.appendPathComponent("sets")
-        print(url)
-        
-        var request = URLRequest(url: url)
-        request.httpBody = nil
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data,
-                let sets = try? JSONDecoder().decode([CardSet].self, from: data) else { completion(nil) ; return }
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+
+            if let error = error {
+                print("There was an error performing a fetch in the NetworkController")
+                completion(nil) ; return
+            }
             
-            completion(sets)
+            guard let data = data else { completion(nil) ; return }
+            completion(data)
         }
         
         dataTask.resume()
     }
     
-    static func fetchAllClasses(username: String, accessToken: String, completion: @escaping ([Class]?) -> Void) {
+    static func fetchAllClasses(username: String, accessToken: String, completion: @escaping ([QuizletClass]?) -> Void) {
         
         guard var baseURL = URL(string: "https://api.quizlet.com/2.0/users") else { completion(nil) ; return }
         

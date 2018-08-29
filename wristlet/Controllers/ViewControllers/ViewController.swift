@@ -118,8 +118,6 @@ extension ViewController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
-        
-        
         guard let userID = UserDefaults.standard.value(forKey: "userID"),
          let accessToken = UserDefaults.standard.value(forKey: "accessToken")
             else { replyHandler([:]) ; return }
