@@ -10,26 +10,26 @@
 		B700062F1FF1D286000E11F7 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B700062E1FF1D286000E11F7 /* NetworkController.swift */; };
 		B7169E80212485E8007E8DC9 /* SetListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB20C2211DFE1C00A0DC3E /* SetListInterfaceController.swift */; };
 		B7169E81212485E8007E8DC9 /* HomeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB20C0211DFDC700A0DC3E /* HomeInterfaceController.swift */; };
-		B7169EC521266D71007E8DC9 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB205A211CEDAF00A0DC3E /* CardSet.swift */; };
+		B7169EC521266D71007E8DC9 /* QuizletSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB205A211CEDAF00A0DC3E /* QuizletSet.swift */; };
 		B733F4561FE1E8EC00E09C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733F4551FE1E8EC00E09C88 /* AppDelegate.swift */; };
 		B733F4581FE1E8EC00E09C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733F4571FE1E8EC00E09C88 /* ViewController.swift */; };
 		B733F45B1FE1E8EC00E09C88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B733F4591FE1E8EC00E09C88 /* Main.storyboard */; };
 		B733F45D1FE1E8EC00E09C88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B733F45C1FE1E8EC00E09C88 /* Assets.xcassets */; };
 		B733F4601FE1E8EC00E09C88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B733F45E1FE1E8EC00E09C88 /* LaunchScreen.storyboard */; };
 		B75168BF212C720C003FAF91 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168BE212C720C003FAF91 /* NetworkController.swift */; };
-		B75168C2212C7FF9003FAF91 /* SetListRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168C0212C7FF6003FAF91 /* SetListRowController.swift */; };
+		B75168C2212C7FF9003FAF91 /* TitleRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168C0212C7FF6003FAF91 /* TitleRowController.swift */; };
 		B75168C4212CA332003FAF91 /* TermListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168C3212CA332003FAF91 /* TermListInterfaceController.swift */; };
 		B75168C6212CA343003FAF91 /* TermDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168C5212CA343003FAF91 /* TermDetailInterfaceController.swift */; };
 		B75168C8212CA417003FAF91 /* TermListRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168C7212CA417003FAF91 /* TermListRowController.swift */; };
 		B75168D4212E1B0D003FAF91 /* RefreshRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */; };
 		B75168FD213447B0003FAF91 /* QuizletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168D1212CC66B003FAF91 /* QuizletClass.swift */; };
-		B751690021346FB2003FAF91 /* ClassListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75168FF21346FB2003FAF91 /* ClassListInterfaceController.swift */; };
-		B75169022135BD05003FAF91 /* CardSetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169012135BD05003FAF91 /* CardSetController.swift */; };
+		B75169022135BD05003FAF91 /* QuizletSetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169012135BD05003FAF91 /* QuizletSetController.swift */; };
 		B75169042135BD1B003FAF91 /* QuizletClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169032135BD1B003FAF91 /* QuizletClassController.swift */; };
 		B75169082135DB2B003FAF91 /* QuizletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169072135DB2B003FAF91 /* QuizletManager.swift */; };
 		B751690A2135DDFF003FAF91 /* WatchConnectivtyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */; };
+		B751692B2138A300003FAF91 /* QuizletClassListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751692A2138A300003FAF91 /* QuizletClassListInterfaceController.swift */; };
 		B7EB2059211CED7800A0DC3E /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB2058211CED7800A0DC3E /* SetTableViewController.swift */; };
-		B7EB205B211CEDAF00A0DC3E /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB205A211CEDAF00A0DC3E /* CardSet.swift */; };
+		B7EB205B211CEDAF00A0DC3E /* QuizletSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB205A211CEDAF00A0DC3E /* QuizletSet.swift */; };
 		B7EB209B211DF42F00A0DC3E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EB2099211DF42F00A0DC3E /* Interface.storyboard */; };
 		B7EB209D211DF43000A0DC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7EB209C211DF43000A0DC3E /* Assets.xcassets */; };
 		B7EB20A4211DF43100A0DC3E /* wristlet-wos Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B7EB20A3211DF43100A0DC3E /* wristlet-wos Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -91,19 +91,19 @@
 		B733F45F1FE1E8EC00E09C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B733F4611FE1E8EC00E09C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B75168BE212C720C003FAF91 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
-		B75168C0212C7FF6003FAF91 /* SetListRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListRowController.swift; sourceTree = "<group>"; };
+		B75168C0212C7FF6003FAF91 /* TitleRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRowController.swift; sourceTree = "<group>"; };
 		B75168C3212CA332003FAF91 /* TermListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermListInterfaceController.swift; sourceTree = "<group>"; };
 		B75168C5212CA343003FAF91 /* TermDetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDetailInterfaceController.swift; sourceTree = "<group>"; };
 		B75168C7212CA417003FAF91 /* TermListRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermListRowController.swift; sourceTree = "<group>"; };
 		B75168D1212CC66B003FAF91 /* QuizletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletClass.swift; sourceTree = "<group>"; };
 		B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRowController.swift; sourceTree = "<group>"; };
-		B75168FF21346FB2003FAF91 /* ClassListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListInterfaceController.swift; sourceTree = "<group>"; };
-		B75169012135BD05003FAF91 /* CardSetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetController.swift; sourceTree = "<group>"; };
+		B75169012135BD05003FAF91 /* QuizletSetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletSetController.swift; sourceTree = "<group>"; };
 		B75169032135BD1B003FAF91 /* QuizletClassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletClassController.swift; sourceTree = "<group>"; };
 		B75169072135DB2B003FAF91 /* QuizletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletManager.swift; sourceTree = "<group>"; };
 		B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivtyManager.swift; sourceTree = "<group>"; };
+		B751692A2138A300003FAF91 /* QuizletClassListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletClassListInterfaceController.swift; sourceTree = "<group>"; };
 		B7EB2058211CED7800A0DC3E /* SetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
-		B7EB205A211CEDAF00A0DC3E /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
+		B7EB205A211CEDAF00A0DC3E /* QuizletSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletSet.swift; sourceTree = "<group>"; };
 		B7EB2097211DF42F00A0DC3E /* wristlet-wos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wristlet-wos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7EB209A211DF42F00A0DC3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		B7EB209C211DF43000A0DC3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				B7EB20C2211DFE1C00A0DC3E /* SetListInterfaceController.swift */,
-				B75168C0212C7FF6003FAF91 /* SetListRowController.swift */,
 			);
 			path = Sets;
 			sourceTree = "<group>";
@@ -209,7 +208,7 @@
 		B75168CD212CBD3C003FAF91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B7EB205A211CEDAF00A0DC3E /* CardSet.swift */,
+				B7EB205A211CEDAF00A0DC3E /* QuizletSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,8 +241,7 @@
 		B75168FE213447B3003FAF91 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B75168D1212CC66B003FAF91 /* QuizletClass.swift */,
-				B75168FF21346FB2003FAF91 /* ClassListInterfaceController.swift */,
+				B751692A2138A300003FAF91 /* QuizletClassListInterfaceController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -253,7 +251,7 @@
 			children = (
 				B75168BE212C720C003FAF91 /* NetworkController.swift */,
 				B75169032135BD1B003FAF91 /* QuizletClassController.swift */,
-				B75169012135BD05003FAF91 /* CardSetController.swift */,
+				B75169012135BD05003FAF91 /* QuizletSetController.swift */,
 				B75169072135DB2B003FAF91 /* QuizletManager.swift */,
 				B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */,
 				B7EB20AC211DF43100A0DC3E /* NotificationController.swift */,
@@ -265,12 +263,29 @@
 			isa = PBXGroup;
 			children = (
 				B7EB20C0211DFDC700A0DC3E /* HomeInterfaceController.swift */,
-				B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */,
+				B751692C2138A403003FAF91 /* Row Controllers */,
 				B75168CB212CBD0E003FAF91 /* Sets */,
 				B75168FE213447B3003FAF91 /* Classes */,
 				B75168CA212CBCFA003FAF91 /* Terms */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		B75169292136FD1E003FAF91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B75168D1212CC66B003FAF91 /* QuizletClass.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B751692C2138A403003FAF91 /* Row Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B75168D3212E1B0D003FAF91 /* RefreshRowController.swift */,
+				B75168C0212C7FF6003FAF91 /* TitleRowController.swift */,
+			);
+			path = "Row Controllers";
 			sourceTree = "<group>";
 		};
 		B7EB2098211DF42F00A0DC3E /* wristlet-wos */ = {
@@ -286,6 +301,7 @@
 		B7EB20A7211DF43100A0DC3E /* wristlet-wos Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B75169292136FD1E003FAF91 /* Model */,
 				B75169052135BD42003FAF91 /* Controllers */,
 				B75169062135BD4F003FAF91 /* UI */,
 				B7EB20AA211DF43100A0DC3E /* ExtensionDelegate.swift */,
@@ -432,7 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7EB205B211CEDAF00A0DC3E /* CardSet.swift in Sources */,
+				B7EB205B211CEDAF00A0DC3E /* QuizletSet.swift in Sources */,
 				B733F4581FE1E8EC00E09C88 /* ViewController.swift in Sources */,
 				B733F4561FE1E8EC00E09C88 /* AppDelegate.swift in Sources */,
 				B7EB2059211CED7800A0DC3E /* SetTableViewController.swift in Sources */,
@@ -446,11 +462,10 @@
 			files = (
 				B75168FD213447B0003FAF91 /* QuizletClass.swift in Sources */,
 				B7169E81212485E8007E8DC9 /* HomeInterfaceController.swift in Sources */,
-				B75168C2212C7FF9003FAF91 /* SetListRowController.swift in Sources */,
-				B751690021346FB2003FAF91 /* ClassListInterfaceController.swift in Sources */,
-				B75169022135BD05003FAF91 /* CardSetController.swift in Sources */,
+				B75168C2212C7FF9003FAF91 /* TitleRowController.swift in Sources */,
+				B75169022135BD05003FAF91 /* QuizletSetController.swift in Sources */,
 				B7169E80212485E8007E8DC9 /* SetListInterfaceController.swift in Sources */,
-				B7169EC521266D71007E8DC9 /* CardSet.swift in Sources */,
+				B7169EC521266D71007E8DC9 /* QuizletSet.swift in Sources */,
 				B75168C6212CA343003FAF91 /* TermDetailInterfaceController.swift in Sources */,
 				B7EB20AD211DF43100A0DC3E /* NotificationController.swift in Sources */,
 				B75168C4212CA332003FAF91 /* TermListInterfaceController.swift in Sources */,
@@ -461,6 +476,7 @@
 				B75168C8212CA417003FAF91 /* TermListRowController.swift in Sources */,
 				B75168BF212C720C003FAF91 /* NetworkController.swift in Sources */,
 				B75169042135BD1B003FAF91 /* QuizletClassController.swift in Sources */,
+				B751692B2138A300003FAF91 /* QuizletClassListInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

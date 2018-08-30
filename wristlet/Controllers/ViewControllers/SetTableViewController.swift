@@ -13,7 +13,7 @@ class SetTableViewController: UITableViewController {
     let accessToken: String? = UserDefaults.standard.value(forKey: "accessToken") as? String
     let userID: String? = UserDefaults.standard.value(forKey: "userID") as? String
     
-    var sets: [CardSet] = []
+    var sets: [QuizletSet] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

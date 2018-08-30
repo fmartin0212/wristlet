@@ -55,7 +55,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-99" y="67"/>
+            <point key="canvasLocation" x="-134" y="161"/>
         </scene>
         <!--Set List Interface Controller-->
         <scene sceneID="SZE-be-9DY">
@@ -79,7 +79,7 @@
                                         <outlet property="refreshButton" destination="OtU-qd-Lrz" id="4rj-J6-wJY"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="setRow" id="aqg-Zd-WQQ" customClass="SetListRowController" customModule="wristlet_wos_Extension">
+                                <tableRow identifier="setRow" id="aqg-Zd-WQQ" customClass="TitleRowController" customModule="wristlet_wos_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="084-Gk-f69">
                                         <items>
                                             <label alignment="left" text="(Set title)" numberOfLines="0" id="64O-16-pjt"/>
@@ -89,7 +89,7 @@
                                         </connections>
                                     </group>
                                     <connections>
-                                        <outlet property="titleLabel" destination="64O-16-pjt" id="XPU-ww-Mi0"/>
+                                        <outlet property="setTitleLabel" destination="64O-16-pjt" id="XPU-ww-Mi0"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -100,16 +100,24 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="291" y="-133"/>
+            <point key="canvasLocation" x="358" y="321"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Quizlet Class List Interface Controller-->
         <scene sceneID="n1x-AM-O1a">
             <objects>
-                <controller id="71h-ng-bbr">
+                <controller id="71h-ng-bbr" customClass="QuizletClassListInterfaceController" customModule="wristlet_wos_Extension">
                     <items>
                         <table alignment="left" id="oV8-1C-hdf">
                             <items>
-                                <tableRow id="90i-Va-tf4">
+                                <tableRow identifier="refreshRow" id="Eeg-l6-tta" customClass="RefreshRowController" customModule="wristlet_wos_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="3O6-5a-dEH">
+                                        <items>
+                                            <button width="0.20000000000000001" height="1" alignment="center" backgroundImage="refresh-arrow" id="ocO-dS-yVq"/>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="classRow" id="90i-Va-tf4" customClass="TitleRowController" customModule="wristlet_wos_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="zd1-WY-03q">
                                         <items>
                                             <label alignment="left" text="(Class name)" numberOfLines="0" id="rfO-pz-tvX"/>
@@ -118,13 +126,19 @@
                                             <segue destination="HLg-NQ-Lwn" kind="push" id="pQ0-JR-04s"/>
                                         </connections>
                                     </group>
+                                    <connections>
+                                        <outlet property="classNameLabel" destination="rfO-pz-tvX" id="15J-Is-PDj"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="oV8-1C-hdf" id="hZm-rm-Oyu"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="259" y="315"/>
+            <point key="canvasLocation" x="-134" y="576"/>
         </scene>
         <!--termListIC-->
         <scene sceneID="te4-Ng-Emi">
@@ -133,14 +147,14 @@
                     <items>
                         <table alignment="left" id="uQb-23-kVJ">
                             <items>
-                                <tableRow identifier="termRowController" id="7vK-NE-T2d" customClass="TermListRowController" customModule="wristlet_wos_Extension">
+                                <tableRow identifier="termRow" id="7vK-NE-T2d" customClass="TitleRowController" customModule="wristlet_wos_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="qxU-R9-P7b">
                                         <items>
                                             <label width="136" alignment="left" text="(Term)" numberOfLines="0" id="UtG-ai-qyf"/>
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="termLabel" destination="UtG-ai-qyf" id="uTj-Ou-3gN"/>
+                                        <outlet property="termLabel" destination="UtG-ai-qyf" id="c3U-DI-JbD"/>
                                         <segue destination="fOY-NL-8kl" kind="push" identifier="toTermDetailSegue" id="O3b-iq-nFW"/>
                                     </connections>
                                 </tableRow>
@@ -152,14 +166,14 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="534" y="-135"/>
+            <point key="canvasLocation" x="644" y="321"/>
         </scene>
         <!--Term Detail Interface Controller-->
         <scene sceneID="Xm5-r1-wC8">
             <objects>
                 <controller id="fOY-NL-8kl" customClass="TermDetailInterfaceController" customModule="wristlet_wos_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="sbF-Ag-t96">
+                        <group width="1" alignment="left" layout="vertical" id="sbF-Ag-t96">
                             <items>
                                 <group width="1" alignment="left" layout="vertical" id="3yo-vM-GrU">
                                     <items>
@@ -173,20 +187,6 @@
                                         </tapGestureRecognizer>
                                     </gestureRecognizers>
                                 </group>
-                                <group width="1" height="37" alignment="left" verticalAlignment="bottom" id="Vhe-0X-NL2">
-                                    <items>
-                                        <button width="0.20000000000000001" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="left-arrow" id="720-wb-l4x">
-                                            <connections>
-                                                <action selector="previousCardTapped" destination="fOY-NL-8kl" id="Q1R-fm-ixo"/>
-                                            </connections>
-                                        </button>
-                                        <button width="0.20000000000000001" height="1" alignment="right" verticalAlignment="bottom" backgroundImage="right-arrow" id="7A4-HG-eKT">
-                                            <connections>
-                                                <action selector="nextCardTapped" destination="fOY-NL-8kl" id="UQg-cF-8WZ"/>
-                                            </connections>
-                                        </button>
-                                    </items>
-                                </group>
                             </items>
                         </group>
                     </items>
@@ -195,10 +195,10 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="772" y="-125"/>
+            <point key="canvasLocation" x="882" y="331"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="w8Q-8J-iVR"/>
+        <segue reference="pQ0-JR-04s"/>
     </inferredMetricsTieBreakers>
 </document>

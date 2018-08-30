@@ -11,8 +11,6 @@ import Foundation
 
 class HomeInterfaceController: WKInterfaceController {
     
-    var setDict: [String : [CardSet]]?
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         self.setTitle("Home")

@@ -29,22 +29,36 @@ class QuizletManager {
 
 extension QuizletManager {
     
-    func getCredentials() {
-        let message = ["getCredentials" : "getCredentials"]
-        
-        watchConnectivityManager.send(message: message) { (reply) in
-            guard let reply = reply,
-                let userID = reply["userID"] as? [String],
-                let accessToken = reply["accessToken"] as? String
-                else { return }
-            
-            UserDefaults.standard.setValue(userID, forKey: "userID")
-            UserDefaults.standard.setValue(accessToken, forKey: "accessToken")
-            
+    func checkForCredentials(completion: @escaping (Bool) -> Void) {
+        if let username = username,
+            let accessToken = accessToken {
+            completion(true)
+        } else {
+            getCredentials { (success) in
+                if success {
+                    completion(true)
+                } else { completion(false) ; return }
+            }
         }
     }
     
-    func fetch(_ object: String, searchParameters: [String], completion: @escaping (Data?) -> Void) {
+    func getCredentials(completion: @escaping (Bool) -> Void) {
+        let message = ["getCredentials" : "getCredentials"]
+        
+        watchConnectivityManager.send(message: message) { (reply) in
+            print(reply)
+            guard let reply = reply,
+                let userID = reply["userID"] as? String,
+                let accessToken = reply["accessToken"] as? String
+                else { completion(false) ; return }
+            
+            UserDefaults.standard.setValue(userID, forKey: "userID")
+            UserDefaults.standard.setValue(accessToken, forKey: "accessToken")
+            completion(true)
+        }
+    }
+    
+    func fetch(with parameters: [String], completion: @escaping (Data?) -> Void) {
 
         guard var url = baseURL,
             let username = username,
@@ -52,7 +66,7 @@ extension QuizletManager {
             else { completion(nil) ; return }
         
         url.appendPathComponent(username)
-        searchParameters.forEach { url.appendPathComponent($0) }
+        parameters.forEach { url.appendPathComponent($0) }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")

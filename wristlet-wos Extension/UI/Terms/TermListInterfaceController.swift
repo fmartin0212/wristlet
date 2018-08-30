@@ -13,11 +13,11 @@ class TermListInterfaceController: WKInterfaceController {
 
     @IBOutlet var table: WKInterfaceTable!
     
-    var set: CardSet?
+    var set: QuizletSet?
     
     override func awake(withContext context: Any?) {
     
-        guard let set = context as? CardSet else { return }
+        guard let set = context as? QuizletSet else { return }
         self.set = set
         self.setTitle(set.title)
         configureTable()
@@ -30,10 +30,10 @@ extension TermListInterfaceController {
     
         guard let set = set else { return }
         
-        table.setNumberOfRows(set.terms.count, withRowType: "termRowController")
+        table.setNumberOfRows(set.terms.count, withRowType: "termRow")
         
         for index in 0..<set.terms.count {
-            guard let rowController = table.rowController(at: index) as? TermListRowController else { return }
+            guard let rowController = table.rowController(at: index) as? TitleRowController else { return }
             
             rowController.termLabel.setText(set.terms[index].term)
         }

@@ -7,3 +7,30 @@
 //
 
 import Foundation
+
+class QuizletClassController {
+    
+    // MARK: - Constants & Variables
+    static let shared = QuizletClassController()
+    let quizletManager = QuizletManager()
+    var quizletClasses = [QuizletClass]()
+    
+    func fetchAllClasses(completion: @escaping (Bool) -> Void) {
+        let parameters = ["classes"]
+        
+        quizletManager.fetch(with: parameters) { (data) in
+            guard let data = data else { completion(false) ; return }
+            
+            do {
+                let quizletClasses = try JSONDecoder().decode([QuizletClass].self, from: data)
+                self.quizletClasses = quizletClasses
+                print(quizletClasses)
+                completion(true)
+                
+            } catch let error {
+                print("There was an error decoding sets in the QuizletClassController: \(error)")
+                completion(false) ; return
+            }
+        }
+    }
+}

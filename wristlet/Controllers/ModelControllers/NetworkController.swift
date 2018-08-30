@@ -122,7 +122,7 @@ class NetworkController {
         dataTask.resume()
     }
     
-    static func getUserInfo2(userID: String, accessToken: String, completion: @escaping (([CardSet]?) -> Void)) {
+    static func getUserInfo2(userID: String, accessToken: String, completion: @escaping (([QuizletSet]?) -> Void)) {
         let baseURL = URL(string: "https://api.quizlet.com/2.0/users/\(userID)")
         guard var url = baseURL else { completion(nil) ; return }
         
@@ -143,7 +143,7 @@ class NetworkController {
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { completion(nil) ; return }
-            guard let sets = try? JSONDecoder().decode([CardSet].self, from: data) else { completion(nil) ; return }
+            guard let sets = try? JSONDecoder().decode([QuizletSet].self, from: data) else { completion(nil) ; return }
             print(sets)
             for set in sets {
                 print(set.title)

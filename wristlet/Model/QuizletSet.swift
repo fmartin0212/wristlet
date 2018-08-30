@@ -8,11 +8,7 @@
 
 import Foundation
 
-struct TopLevelDictionary: Decodable {
-    let sets: [CardSet]
-}
-
-struct CardSet: Decodable {
+struct QuizletSet: Decodable {
     let id: Int
     let title: String
     let count: Int
