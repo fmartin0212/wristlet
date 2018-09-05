@@ -11,6 +11,10 @@ import WatchConnectivity
 
 class ViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var getStartedButton: UIButton!
+    
+    // MARK: - Constants & Variables
     static var authRequestURL: URLRequest?
 
     @IBAction func authenticate(_ sender: Any) {
@@ -22,6 +26,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getStartedButton.clipsToBounds = true
+        getStartedButton.layer.cornerRadius = 15
         
         NotificationCenter.default.addObserver(self, selector: #selector(accessTokenWasReceivedFrom(notification:)), name: accessTokenRecievedNotification, object: nil)
         
@@ -96,24 +103,6 @@ extension ViewController : WCSessionDelegate {
             print(error)
         }
         replyHandler(dataPlaceholder)
-        
-//        replyHandler(Data())
-//        let accessToken: String? = UserDefaults.standard.value(forKey: "accessToken") as? String
-//        let userID: String? = UserDefaults.standard.value(forKey: "userID") as? String
-//        print("adsf")
-//        NetworkController.getUserInfo2(userID: userID!, accessToken: accessToken!) { (sets) in
-//            guard let sets = sets else { return }
-//            print("test")
-//            do {
-//                let encoder = JSONEncoder()
-//                let setsAsData = try encoder.encode(sets)
-//                replyHandler(setsAsData)
-//            } catch {
-//                print(error)
-//            }
-        //
-        //            replyHandler(Data())
-        //        }
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {

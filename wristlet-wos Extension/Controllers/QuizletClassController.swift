@@ -12,13 +12,19 @@ class QuizletClassController {
     
     // MARK: - Constants & Variables
     static let shared = QuizletClassController()
+    let baseURL = URL(string: "https://api.quizlet.com/2.0")
     let quizletManager = QuizletManager()
     var quizletClasses = [QuizletClass]()
     
     func fetchAllClasses(completion: @escaping (Bool) -> Void) {
-        let parameters = ["classes"]
+        guard let username = quizletManager.username,
+            var baseURL = baseURL
+        else { completion(false) ; return }
         
-        quizletManager.fetch(with: parameters) { (data) in
+        baseURL.appendPathComponent("users")
+        let parameters = [username, "classes"]
+        
+        quizletManager.fetch(from: baseURL, with: parameters) { (data) in
             guard let data = data else { completion(false) ; return }
             
             do {

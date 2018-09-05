@@ -13,14 +13,19 @@ class QuizletSetController: NSObject {
     
     // MARK: - Constants & Variables
     static let shared = QuizletSetController()
+    let baseURL = URL(string: "https://api.quizlet.com/2.0")
     let quizletManager = QuizletManager()
     var quizletSets = [QuizletSet]()
     
     func fetchAllSets(completion: @escaping (Bool) -> Void) {
-    
-        let parameters = ["sets"]
+        guard let username = quizletManager.username,
+            var baseURL = baseURL
+            else { completion(false) ; return }
         
-        quizletManager.fetch(with: parameters) { (data) in
+        baseURL.appendPathComponent("users")
+        let parameters = [username, "sets"]
+        
+        quizletManager.fetch(from: baseURL, with: parameters) { (data) in
             
             guard let data = data else { completion(false) ; return }
             
@@ -36,10 +41,10 @@ class QuizletSetController: NSObject {
     }
     
     func fetchSets(for quizletClass: QuizletClass, completion: @escaping ([QuizletSet]?) -> Void) {
-        
+        guard let baseURL = baseURL else { completion(nil) ; return }
         let parameters = ["classes", String(quizletClass.id), "sets"]
         
-        quizletManager.fetch(with: parameters) { (data) in
+        quizletManager.fetch(from: baseURL, with: parameters) { (data) in
             guard let data = data else { completion(nil) ; return }
             
             do {

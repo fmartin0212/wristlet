@@ -18,69 +18,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3t-zp-xUr">
-                                <rect key="frame" x="143" y="617" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Authenticate"/>
-                                <connections>
-                                    <action selector="authenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8h-VY-oXp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2P-qj-trx">
-                                <rect key="frame" x="153" y="150" width="68" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Sets"/>
-                                <connections>
-                                    <action selector="setsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BHH-FS-MB8"/>
-                                    <segue destination="6UL-sT-X9w" kind="show" id="IbD-z7-Ids"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qfM-yT-uUW">
+                                <rect key="frame" x="67.5" y="162.5" width="240" height="406"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smartphone" translatesAutoresizingMaskIntoConstraints="NO" id="y8K-GZ-W6Q">
+                                        <rect key="frame" x="37.5" y="0.0" width="165" height="173"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="UOy-FB-J3w"/>
+                                            <constraint firstAttribute="height" constant="173" id="g4N-qW-z8s"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M8g-07-DWb">
+                                        <rect key="frame" x="0.0" y="183" width="240" height="169"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="8B7-iN-02R"/>
+                                            <constraint firstAttribute="height" constant="169" id="MlX-aj-LBV"/>
+                                        </constraints>
+                                        <string key="text">Hello! 
+
+In order for wristlet to be useful, please tap below to allow access to your Quizlet account.</string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3t-zp-xUr">
+                                        <rect key="frame" x="64" y="362" width="112" height="44"/>
+                                        <color key="backgroundColor" red="0.91764705882352937" green="0.29019607843137257" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                        <state key="normal" title="Get started">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8h-VY-oXp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qfM-yT-uUW" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5ZT-5g-gcK"/>
+                            <constraint firstItem="qfM-yT-uUW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qfv-C0-U9l"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Sob-Eg-9YM"/>
+                    <connections>
+                        <outlet property="getStartedButton" destination="m3t-zp-xUr" id="ssC-3N-E9U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="127.28635682158921"/>
         </scene>
-        <!--Set Table View Controller-->
-        <scene sceneID="ELF-BI-94k">
+        <!--View Controller-->
+        <scene sceneID="5et-yf-vto">
             <objects>
-                <tableViewController id="6UL-sT-X9w" customClass="SetTableViewController" customModule="wristlet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LYq-n9-tuQ">
+                <viewController id="KgH-zj-1sl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZLj-m3-ybc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMf-Vs-s97">
+                                <rect key="frame" x="155" y="274" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="setCell" textLabel="U7S-w0-5ql" style="IBUITableViewCellStyleDefault" id="edr-Hj-FnU">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edr-Hj-FnU" id="hfj-Z6-O2x">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U7S-w0-5ql">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="6UL-sT-X9w" id="Cdf-GU-95N"/>
-                            <outlet property="delegate" destination="6UL-sT-X9w" id="MH2-uZ-rRX"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iW6-Nx-LYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="rha-EY-WDt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nw5-yh-uvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="126"/>
+            <point key="canvasLocation" x="1084" y="126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8wA-yc-GeA">
@@ -101,4 +115,7 @@
             <point key="canvasLocation" x="-292" y="127"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="smartphone" width="128" height="128"/>
+    </resources>
 </document>

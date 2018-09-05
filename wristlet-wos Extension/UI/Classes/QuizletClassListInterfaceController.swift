@@ -11,7 +11,7 @@ import Foundation
 
 
 class QuizletClassListInterfaceController: WKInterfaceController {
-
+    
     // MARK: - Outlets
     @IBOutlet var table: WKInterfaceTable!
     
@@ -21,16 +21,14 @@ class QuizletClassListInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        table.setNumberOfRows(1, withRowType: "refreshRow")
-        
-        quizletManager.getCredentials { (success) in
-            if success {
-                QuizletClassController.shared.fetchAllClasses(completion: { (success) in
-                    if success {
-                        self.configureTable()
-                    }
-                })
-            }
+        if QuizletClassController.shared.quizletClasses.count == 0 {
+            NotificationCenter.default.addObserver(self, selector: #selector(fetchAllClasses), name: Notifications.credentialsReceivedNotification.name, object: nil)
+            
+            table.setNumberOfRows(1, withRowType: "refreshRow")
+            
+            quizletManager.checkForCredentials()
+        } else {
+            configureTable()
         }
     }
 }
@@ -53,8 +51,20 @@ extension QuizletClassListInterfaceController {
             let quizletClass = QuizletClassController.shared.quizletClasses[index - 1]
             rowController.classNameLabel.setText(quizletClass.name)
         }
-        
     }
     
-    
+    @objc func fetchAllClasses() {
+        QuizletClassController.shared.fetchAllClasses(completion: { (success) in
+            if success {
+                self.configureTable()
+            }
+        })
+        
+    }
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        let quizletClass = QuizletClassController.shared.quizletClasses[rowIndex - 1]
+        
+        return quizletClass
+
+    }
 }

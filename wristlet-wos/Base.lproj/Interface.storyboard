@@ -39,17 +39,16 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="ALq-Gj-XMB">
                             <items>
-                                <button width="1" height="0.33300000000000002" alignment="center" title="Sets" id="b40-Tw-dkH">
+                                <button width="1" height="0.5" alignment="center" title="All Sets" id="b40-Tw-dkH">
                                     <connections>
                                         <segue destination="HLg-NQ-Lwn" kind="push" id="w8Q-8J-iVR"/>
                                     </connections>
                                 </button>
-                                <button width="1" height="0.33329999999999999" alignment="left" title="Classes" id="sEQ-ar-UeG">
+                                <button width="1" height="0.5" alignment="left" title="All Classes" id="sEQ-ar-UeG">
                                     <connections>
                                         <segue destination="71h-ng-bbr" kind="push" id="Fzw-8R-MwQ"/>
                                     </connections>
                                 </button>
-                                <button width="1" height="0.33329999999999999" alignment="left" title="Folders" id="2u7-6A-Z0V"/>
                             </items>
                         </group>
                     </items>
@@ -110,7 +109,7 @@
                         <table alignment="left" id="oV8-1C-hdf">
                             <items>
                                 <tableRow identifier="refreshRow" id="Eeg-l6-tta" customClass="RefreshRowController" customModule="wristlet_wos_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="3O6-5a-dEH">
+                                    <group key="rootItem" width="1" height="24" alignment="left" id="3O6-5a-dEH">
                                         <items>
                                             <button width="0.20000000000000001" height="1" alignment="center" backgroundImage="refresh-arrow" id="ocO-dS-yVq"/>
                                         </items>
@@ -179,18 +178,20 @@
                                     <items>
                                         <label width="1" alignment="left" text="(Term)" textAlignment="left" numberOfLines="0" id="oYK-Y9-8p2"/>
                                     </items>
-                                    <gestureRecognizers>
-                                        <tapGestureRecognizer id="f3b-Tk-kij">
-                                            <connections>
-                                                <action selector="tapGestureRecognizerTapped:" destination="fOY-NL-8kl" id="Wjg-iA-fUz"/>
-                                            </connections>
-                                        </tapGestureRecognizer>
-                                    </gestureRecognizers>
                                 </group>
                             </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="f3b-Tk-kij">
+                                    <connections>
+                                        <action selector="tapGestureRecognizerTapped:" destination="fOY-NL-8kl" id="Wjg-iA-fUz"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="labelGroup" destination="3yo-vM-GrU" id="wQR-2S-CaH"/>
+                        <outlet property="parentGroup" destination="sbF-Ag-t96" id="4A6-UG-8Oo"/>
                         <outlet property="termDefLabel" destination="oYK-Y9-8p2" id="s4L-dg-ywk"/>
                     </connections>
                 </controller>

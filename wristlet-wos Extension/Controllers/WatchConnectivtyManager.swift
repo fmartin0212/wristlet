@@ -9,25 +9,38 @@
 import Foundation
 import WatchConnectivity
 
+protocol WatchConnectivityManagerDelegate: class {
+    func handle(reply: [String : Any])
+}
+
+
 class WatchConnectivityManager: NSObject {
     
-    func send(message: [String : Any], completion: @escaping ([String : Any]?) -> Void) {
+    var message: [String : Any]?
+    weak var delegate: WatchConnectivityManagerDelegate?
+    
+    func send(message: [String : Any]) {
+        self.message = message
+        
         if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-            
-            session.sendMessage(message, replyHandler: { (reply) in
-                completion(reply)
-            }) { (error) in
-                print(error)
-                completion(nil)
-            }
+        let session = WCSession.default
+        session.delegate = self
+        session.activate()
+        
         }
     }
 }
 
+
 extension WatchConnectivityManager : WCSessionDelegate {
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        guard let message = message else { return }
+        
+        session.sendMessage(message, replyHandler: { (reply) in
+            self.delegate?.handle(reply: reply)
+        }) { (error) in
+            print(error)
+        }
+    }
 }

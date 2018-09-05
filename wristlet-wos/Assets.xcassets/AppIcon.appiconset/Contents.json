@@ -17,12 +17,14 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
+      "filename" : "Settings Icon iPhone 5,6 (black).png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
+      "filename" : "Settings Icon iPhone 6+ (black).png",
       "role" : "companionSettings",
       "scale" : "3x"
     },

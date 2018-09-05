@@ -28,6 +28,7 @@
 		B75169082135DB2B003FAF91 /* QuizletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169072135DB2B003FAF91 /* QuizletManager.swift */; };
 		B751690A2135DDFF003FAF91 /* WatchConnectivtyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */; };
 		B751692B2138A300003FAF91 /* QuizletClassListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751692A2138A300003FAF91 /* QuizletClassListInterfaceController.swift */; };
+		B751692E2139B4F8003FAF91 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751692D2139B4F8003FAF91 /* Notifications.swift */; };
 		B7EB2059211CED7800A0DC3E /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB2058211CED7800A0DC3E /* SetTableViewController.swift */; };
 		B7EB205B211CEDAF00A0DC3E /* QuizletSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB205A211CEDAF00A0DC3E /* QuizletSet.swift */; };
 		B7EB209B211DF42F00A0DC3E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EB2099211DF42F00A0DC3E /* Interface.storyboard */; };
@@ -102,6 +103,7 @@
 		B75169072135DB2B003FAF91 /* QuizletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletManager.swift; sourceTree = "<group>"; };
 		B75169092135DDFF003FAF91 /* WatchConnectivtyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivtyManager.swift; sourceTree = "<group>"; };
 		B751692A2138A300003FAF91 /* QuizletClassListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletClassListInterfaceController.swift; sourceTree = "<group>"; };
+		B751692D2139B4F8003FAF91 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		B7EB2058211CED7800A0DC3E /* SetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
 		B7EB205A211CEDAF00A0DC3E /* QuizletSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletSet.swift; sourceTree = "<group>"; };
 		B7EB2097211DF42F00A0DC3E /* wristlet-wos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wristlet-wos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +303,7 @@
 		B7EB20A7211DF43100A0DC3E /* wristlet-wos Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B751692D2139B4F8003FAF91 /* Notifications.swift */,
 				B75169292136FD1E003FAF91 /* Model */,
 				B75169052135BD42003FAF91 /* Controllers */,
 				B75169062135BD4F003FAF91 /* UI */,
@@ -472,6 +475,7 @@
 				B751690A2135DDFF003FAF91 /* WatchConnectivtyManager.swift in Sources */,
 				B75168D4212E1B0D003FAF91 /* RefreshRowController.swift in Sources */,
 				B7EB20AB211DF43100A0DC3E /* ExtensionDelegate.swift in Sources */,
+				B751692E2139B4F8003FAF91 /* Notifications.swift in Sources */,
 				B75169082135DB2B003FAF91 /* QuizletManager.swift in Sources */,
 				B75168C8212CA417003FAF91 /* TermListRowController.swift in Sources */,
 				B75168BF212C720C003FAF91 /* NetworkController.swift in Sources */,

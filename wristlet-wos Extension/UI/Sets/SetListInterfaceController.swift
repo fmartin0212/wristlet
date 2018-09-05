@@ -19,47 +19,17 @@ class SetListInterfaceController: WKInterfaceController {
     let quizletManager = QuizletManager()
     var quizletClass: QuizletClass?
     var quizletSetsForClass = [QuizletSet]()
-    var userID: String?
-    var accessToken: String?
+    var context: Any?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         self.setTitle(quizletClass?.name ?? "My Sets")
+        self.context = context
         table.setNumberOfRows(1, withRowType: "refreshRow")
         
-        quizletManager.checkForCredentials { (success) in
-            if success {
-                if let quizletClass = self.quizletClass {
-                    QuizletSetController.shared.fetchSets(for: quizletClass, completion: { (quizletSetsForClass) in
-                        DispatchQueue.main.async {
-                            guard let quizletSetsForClass = quizletSetsForClass else { return }
-                            self.quizletSetsForClass = quizletSetsForClass
-                            self.configureTable()
-                        }
-                    })
-                } else {
-                    if QuizletSetController.shared.quizletSets.count == 0 {
-                        QuizletSetController.shared.fetchAllSets(completion: { (success) in
-                            if success {
-                                DispatchQueue.main.async {
-                                    self.configureTable()
-                                }
-                            }
-                        })
-                    }
-                }
-            }
-        }
-    }
-    
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchSets), name: Notifications.credentialsReceivedNotification.name, object: nil)
+        
+        quizletManager.checkForCredentials()
     }
 }
 
@@ -87,13 +57,41 @@ extension SetListInterfaceController {
         }
     }
     
+    @objc func fetchSets() {
+        
+        if let quizletClass = context as? QuizletClass {
+            self.quizletClass = quizletClass
+            QuizletSetController.shared.fetchSets(for: quizletClass, completion: { (quizletSetsForClass) in
+                DispatchQueue.main.async {
+                    guard let quizletSetsForClass = quizletSetsForClass else { return }
+                    self.quizletSetsForClass = quizletSetsForClass
+                    self.configureTable()
+                }
+            })
+        } else {
+            if QuizletSetController.shared.quizletSets.count == 0 {
+                QuizletSetController.shared.fetchAllSets(completion: { (success) in
+                    if success {
+                        DispatchQueue.main.async {
+                            self.configureTable()
+                        }
+                    }
+                })
+            } else { self.configureTable() }
+        }
+    }
+    
+    
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         
-        if segueIdentifier == "toTermListSegue" {
+        if let _ = quizletClass {
+            let quizletSetForClass = quizletSetsForClass[rowIndex - 1]
+            
+            return quizletSetForClass
+        } else {
             let quizletSet = QuizletSetController.shared.quizletSets[rowIndex - 1]
             
             return quizletSet
         }
-        return nil
     }
 }

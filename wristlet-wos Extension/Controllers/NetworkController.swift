@@ -15,8 +15,12 @@ class NetworkController {
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
 
             if let error = error {
-                print("There was an error performing a fetch in the NetworkController")
+                print("There was an error performing a fetch in the NetworkController: \(error)")
                 completion(nil) ; return
+            }
+            
+            if let response = response {
+                print(response)
             }
             
             guard let data = data else { completion(nil) ; return }

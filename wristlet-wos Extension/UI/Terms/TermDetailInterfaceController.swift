@@ -11,6 +11,9 @@ import WatchKit
 
 class TermDetailInterfaceController: WKInterfaceController {
 
+    @IBOutlet var parentGroup: WKInterfaceGroup!
+    @IBOutlet var labelGroup: WKInterfaceGroup!
+    
     var terms: [Term]?
     var term: Term?
     var rowIndex: Int?
